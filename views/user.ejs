@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include('header') %>
+</head>
+<body>
+<a href="/">Back</a>
+<label for="name">
+    <input id="name">
+</label>
+<label for="pass">
+    <input id="pass">
+</label>
+<label for="email">
+    <input id="email">
+</label>
+<label for="birth">
+    <input id="birth">
+</label>
+</body>
+<script>
+    const name = document.getElementById('name');
+    const pass = document.getElementById('pass');
+    const email = document.getElementById('email');
+    const birth = document.getElementById('birth');
+
+    fetch('/user', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: name.value,
+            password: pass.value,
+            email: email.value,
+            birthDate: birth.value
+        })
+    })
+</script>
+</html>
