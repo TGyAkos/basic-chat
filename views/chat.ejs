@@ -5,10 +5,14 @@
 </head>
 <body>
 <a href="/">Back</a>
-
-<% chats.forEach(chat=> {
+<%
+ chats.map(chat => {
+     chat.senderId =
+ })
+ %>
+<% chats.forEach(chat => {
     %>
-    <p><%= chat.username %>: <%= chat.message %></p>
+    <p><%= chat %>: <%= chat %></p>
     <%
 })%>
 

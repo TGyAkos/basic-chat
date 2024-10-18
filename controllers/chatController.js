@@ -8,8 +8,9 @@ const getMessages = async (req, res) => {
     try
     {
         const chats = await prisma.chat.findMany()
+        const users = await prisma.user.findMany()
         debug(chats)
-        res.render('chat', { chats: JSON.stringify(chats) });
+        res.render('chat', { chats, users });
     } catch (error){ res.status(500).json(error); }
 };
 
